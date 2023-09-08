@@ -11,9 +11,7 @@ function realTime() {
   ];
   const now = new Date();
   const dayOfWeek = daysOfWeek[now.getUTCDay()];
-  const utcTime = now.toISOString().slice(11,19);
-
-//   console.log(utcTime);
+  const utcTime = now.toISOString().slice(11, 19);
 
   const dayElement = document.querySelector(
     '[data-testid="currentDayOfTheWeek"]'
@@ -23,7 +21,8 @@ function realTime() {
   dayElement.textContent = dayOfWeek;
   timeElement.textContent = utcTime;
 
-  setTimeout(realTime, 1000); // Update every 1 seconds
+  setTimeout(realTime, 10000); // Update every 10 seconds
 }
 
+// Call updateTime initially to set the initial values
 realTime();
